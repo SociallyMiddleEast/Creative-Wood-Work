@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <!--
   ╔══════════════════════════════════════════════════════════════════╗
-  ║                  CREATIVE WOOD WORK INVENTORY MANAGEMENT         ║
+  ║                  CREATIVE WOOD WORK INVENTORY MANAGEMENT                      ║
   ║                     Single-File App v7                           ║
   ╠══════════════════════════════════════════════════════════════════╣
   ║  FILE STRUCTURE (Ctrl+F the section names to jump)               ║
   ╠══════════════════════════════════════════════════════════════════╣
-  ║  CSS:  §CSS-VARIABLES  §CSS-BASE  §CSS-LAYOUT  §CSS-COMPONENTS   ║
+  ║  CSS:  §CSS-VARIABLES  §CSS-BASE  §CSS-LAYOUT  §CSS-COMPONENTS  ║
   ║        §CSS-MODAL  §CSS-LOGIN  §CSS-PRINT                        ║
   ║  HTML: §HTML-LOGIN  §HTML-SIDEBAR  §HTML-TOPBAR                  ║
   ║        §PAGE-DASHBOARD  §PAGE-STOCK  §PAGE-PURCHASES             ║
@@ -1231,21 +1231,7 @@ input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--accent);
         <div class="filters no-print">
           <div class="filter-group">
             <div class="filter-label">Category</div>
-            <select id="stock-cat-filter" onchange="renderStock()">
-              <option value="">All Categories</option>
-              <option>PANNEAU</option>
-              <option>CHANT-PVC</option>
-              <option>BOIS MASSIF</option>
-              <option>PLACAGE</option>
-              <option>CHANT-PLACAGE</option>
-              <option>ACCESSOIRES</option>
-              <option>CONSOMMABLES</option>
-              <option>VERRE</option>
-              <option>MIROIRE</option>
-              <option>LAMINATION</option>
-              <option>PEINTURE</option>
-              <option>EUROLIGHT</option>
-            </select>
+            <select id="stock-cat-filter" onchange="renderStock()"></select>
           </div>
           <div class="filter-group">
             <div class="filter-label">Type</div>
@@ -1431,21 +1417,7 @@ input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--accent);
           </div>
           <div class="filter-group">
             <div class="filter-label">Category</div>
-            <select id="con-cat-filter" onchange="renderConsumption()">
-              <option value="">All</option>
-              <option>PANNEAU</option>
-              <option>CHANT-PVC</option>
-              <option>BOIS MASSIF</option>
-              <option>PLACAGE</option>
-              <option>CHANT-PLACAGE</option>
-              <option>ACCESSOIRES</option>
-              <option>CONSOMMABLES</option>
-              <option>VERRE</option>
-              <option>MIROIRE</option>
-              <option>LAMINATION</option>
-              <option>PEINTURE</option>
-              <option>EUROLIGHT</option>
-            </select>
+            <select id="con-cat-filter" onchange="renderConsumption()"></select>
           </div>
           <div class="filter-group">
             <div class="filter-label">Project</div>
@@ -1606,13 +1578,7 @@ input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--accent);
         <div class="card-header">
           <div class="card-title">Supplier Directory</div>
           <div style="display:flex;gap:10px;">
-            <select id="sup-cat-filter" onchange="renderSuppliersPage()" style="min-width:160px;">
-              <option value="">All Categories</option>
-              <option>PANNEAU</option><option>CHANT-PVC</option><option>BOIS MASSIF</option>
-              <option>PLACAGE</option><option>ACCESSOIRES</option><option>CONSOMMABLES</option>
-              <option>VERRE</option><option>MIROIRE</option><option>LAMINATION</option>
-              <option>PEINTURE</option><option>EUROLIGHT</option><option>MIXED</option>
-            </select>
+            <select id="sup-cat-filter" onchange="renderSuppliersPage()" style="min-width:160px;"></select>
             <input type="text" id="sup-search" placeholder="Search name..." oninput="renderSuppliersPage()" style="width:160px;">
           </div>
         </div>
@@ -1682,21 +1648,7 @@ input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--accent);
             </div>
             <div class="filter-group">
               <div class="filter-label">Category</div>
-              <select id="rep-cat">
-                <option value="">All</option>
-                <option>PANNEAU</option>
-                <option>CHANT-PVC</option>
-                <option>BOIS MASSIF</option>
-                <option>PLACAGE</option>
-                <option>CHANT-PLACAGE</option>
-                <option>ACCESSOIRES</option>
-                <option>CONSOMMABLES</option>
-                <option>VERRE</option>
-                <option>MIROIRE</option>
-                <option>LAMINATION</option>
-                <option>PEINTURE</option>
-                <option>EUROLIGHT</option>
-              </select>
+              <select id="rep-cat"></select>
             </div>
             <div class="filter-group">
               <div class="filter-label">Code</div>
@@ -2614,13 +2566,7 @@ function handleRequest(e) {
         <div class="filters no-print" style="margin-bottom:12px;">
           <div class="filter-group">
             <div class="filter-label">Filter Category</div>
-            <select id="prod-cat-filter" onchange="renderProducts()">
-              <option value="">All Categories</option>
-              <option>PANNEAU</option><option>CHANT-PVC</option><option>BOIS MASSIF</option>
-              <option>PLACAGE</option><option>ACCESSOIRES</option><option>CONSOMMABLES</option>
-              <option>VERRE</option><option>MIROIRE</option><option>LAMINATION</option>
-              <option>PEINTURE</option><option>EUROLIGHT</option>
-            </select>
+            <select id="prod-cat-filter" onchange="renderProducts()"></select>
           </div>
           <div class="filter-group">
             <div class="filter-label">Search</div>
@@ -2643,13 +2589,7 @@ function handleRequest(e) {
           <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);margin-bottom:10px;letter-spacing:1px;">ADD NEW PRODUCT</div>
           <div class="inline-add-row">
             <input type="text" id="np-code" placeholder="Code (e.g. H1234)" style="flex:1.5;">
-            <select id="np-cat" style="flex:1.5;">
-              <option value="">Category</option>
-              <option>PANNEAU</option><option>CHANT-PVC</option><option>BOIS MASSIF</option>
-              <option>PLACAGE</option><option>ACCESSOIRES</option><option>CONSOMMABLES</option>
-              <option>VERRE</option><option>MIROIRE</option><option>LAMINATION</option>
-              <option>PEINTURE</option><option>EUROLIGHT</option>
-            </select>
+            <select id="np-cat" style="flex:1.5;"></select>
             <select id="np-type" style="flex:1;">
               <option value="">Type</option>
               <option>PVC20</option>
@@ -2704,6 +2644,24 @@ function handleRequest(e) {
           </div>
         </div>
       </div><!-- /products-catalog-card -->
+
+      <!-- Category Manager -->
+      <div class="card" id="settings-categories-card">
+        <div class="card-header">
+          <div class="card-title">Product Categories</div>
+        </div>
+        <div style="font-size:12px;color:var(--text3);margin-bottom:14px;">
+          These are the categories offered everywhere in the app — Stock, Purchases, Consumption, Products, Reports and Suppliers. Add, rename, or remove them here and every dropdown updates instantly.
+        </div>
+        <div id="categories-list" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;"></div>
+        <div class="inline-add-row">
+          <input type="text" id="new-category-name" placeholder="New category name" style="flex:1;" onkeydown="if(event.key==='Enter')addCategory()">
+          <button class="btn btn-accent" onclick="addCategory()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add
+          </button>
+        </div>
+      </div><!-- /settings-categories-card -->
 
       <!-- App Settings -->
       <div class="card">
@@ -3300,13 +3258,7 @@ function handleRequest(e) {
       </div>
       <div>
         <label class="form-label">Category</label>
-        <select id="sm-category" style="width:100%;">
-          <option value="">Select category</option>
-          <option>PANNEAU</option><option>CHANT-PVC</option><option>BOIS MASSIF</option>
-          <option>PLACAGE</option><option>ACCESSOIRES</option><option>CONSOMMABLES</option>
-          <option>VERRE</option><option>MIROIRE</option><option>LAMINATION</option>
-          <option>PEINTURE</option><option>EUROLIGHT</option><option>MIXED</option>
-        </select>
+        <select id="sm-category" style="width:100%;"></select>
       </div>
       <div>
         <label class="form-label">Address / Location</label>
@@ -3382,6 +3334,7 @@ const LS = {
   consumption: 'bwood_consumption_extra',
   settings: 'bwood_settings',
   gsheet: 'bwood_gsheet_url',
+  categories: 'bwood_categories',
   theme: 'bwood_theme',
   projects: 'bwood_projects',
   custom_products: 'bwood_custom_products',
@@ -3482,6 +3435,131 @@ function onCurrencyChange() {
   // Re-render whichever page is currently open so live totals pick up
   // the new currency immediately.
   if (typeof renderPage === 'function' && typeof currentPage !== 'undefined') renderPage(currentPage);
+}
+
+// §JS-CATEGORIES ════════════════════════════════════════════════
+// Product category list — fully editable from Settings, synced to
+// the CATEGORIES sheet tab. Every category dropdown in the app
+// (Stock, Consumption, Suppliers, Reports, Products, Add Product,
+// Supplier modal) is populated from this single source of truth.
+// ══════════════════════════════════════════════════════════════
+const DEFAULT_CATEGORIES = [
+  'PANNEAU','CHANT-PVC','CHANT-PLACAGE','BOIS MASSIF','PLACAGE','ACCESSOIRES',
+  'CONSOMMABLES','VERRE','MIROIRE','LAMINATION','PEINTURE','EUROLIGHT','MIXED'
+];
+
+function getCategories() {
+  const c = ls_get(LS.categories, null);
+  return (Array.isArray(c) && c.length) ? c : DEFAULT_CATEGORIES.slice();
+}
+function saveCategories(c) { ls_set(LS.categories, c); }
+
+// Every static <select> in the app that lists categories, and the
+// placeholder/"all" text each one uses.
+const CATEGORY_SELECT_CONFIG = [
+  { id: 'stock-cat-filter', placeholder: 'All Categories' },
+  { id: 'con-cat-filter',   placeholder: 'All' },
+  { id: 'sup-cat-filter',   placeholder: 'All Categories' },
+  { id: 'rep-cat',          placeholder: 'All' },
+  { id: 'prod-cat-filter',  placeholder: 'All Categories' },
+  { id: 'np-cat',           placeholder: 'Category' },
+  { id: 'sm-category',      placeholder: 'Select category' }
+];
+
+function populateCategorySelects() {
+  const cats = getCategories();
+  CATEGORY_SELECT_CONFIG.forEach(cfg => {
+    const sel = document.getElementById(cfg.id);
+    if (!sel) return;
+    const current = sel.value;
+    sel.innerHTML = `<option value="">${cfg.placeholder}</option>` +
+      cats.map(c => `<option>${c}</option>`).join('');
+    if (current && cats.includes(current)) sel.value = current;
+  });
+}
+
+function _escJs(s) { return String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'"); }
+
+function renderCategoriesManager() {
+  const el = document.getElementById('categories-list');
+  if (!el) return;
+  const cats = getCategories();
+  el.innerHTML = cats.length === 0
+    ? `<span style="color:var(--text3);font-size:13px;">No categories yet — add one below.</span>`
+    : cats.map(c => `
+      <span class="tag" style="display:inline-flex;align-items:center;gap:8px;padding:7px 10px;">
+        ${c}
+        <button type="button" onclick="renameCategory('${_escJs(c)}')" title="Rename" style="border:none;background:none;cursor:pointer;color:var(--text3);padding:0;font-size:12px;line-height:1;">✏️</button>
+        <button type="button" onclick="deleteCategory('${_escJs(c)}')" title="Delete" style="border:none;background:none;cursor:pointer;color:var(--red);padding:0;font-size:13px;line-height:1;">✕</button>
+      </span>
+    `).join('');
+}
+
+function addCategory() {
+  const input = document.getElementById('new-category-name');
+  const name = (input.value || '').trim().toUpperCase();
+  if (!name) { showToast('error', 'Missing', 'Enter a category name.'); return; }
+  const cats = getCategories();
+  if (cats.includes(name)) { showToast('error', 'Already Exists', `${name} already exists.`); return; }
+  cats.push(name);
+  saveCategories(cats);
+  input.value = '';
+  renderCategoriesManager();
+  populateCategorySelects();
+  autoSyncSheet('CATEGORIES');
+  showToast('success', 'Category Added', `${name} added.`);
+}
+
+function renameCategory(oldName) {
+  const input = prompt('Rename category:', oldName);
+  if (input === null) return;
+  const newName = input.trim().toUpperCase();
+  if (!newName || newName === oldName) return;
+  const cats = getCategories();
+  if (cats.includes(newName)) { showToast('error', 'Already Exists', `${newName} already exists.`); return; }
+  const idx = cats.indexOf(oldName);
+  if (idx === -1) return;
+  cats[idx] = newName;
+  saveCategories(cats);
+  _cascadeCategoryRename(oldName, newName);
+  renderCategoriesManager();
+  populateCategorySelects();
+  autoSyncSheet('CATEGORIES');
+  showToast('success', 'Renamed', `${oldName} → ${newName}, updated everywhere it was used.`);
+}
+
+function deleteCategory(name) {
+  if (!confirm(`Delete category "${name}"? Existing records keep this label until reassigned — it just won't be selectable for new entries.`)) return;
+  const cats = getCategories().filter(c => c !== name);
+  saveCategories(cats);
+  renderCategoriesManager();
+  populateCategorySelects();
+  autoSyncSheet('CATEGORIES');
+  showToast('success', 'Deleted', `${name} removed from the category list.`);
+}
+
+// Cascade a rename across every place a category string is stored
+// locally, so nothing becomes orphaned under the old name.
+function _cascadeCategoryRename(oldName, newName) {
+  const cp = getCustomProducts();
+  let changed = false;
+  cp.forEach(p => { if (p.category === oldName) { p.category = newName; changed = true; } });
+  if (changed) { saveCustomProducts(cp); autoSyncSheet('PRIX'); }
+
+  const purchases = getPurchases();
+  changed = false;
+  purchases.forEach(p => { if (p.category === oldName) { p.category = newName; changed = true; } });
+  if (changed) { savePurchases(purchases); autoSyncSheet('PURCHASES'); }
+
+  const cons = getExtraConsumption();
+  changed = false;
+  cons.forEach(c => { if (c.category === oldName) { c.category = newName; changed = true; } });
+  if (changed) { saveExtraConsumption(cons); autoSyncSheet('STOCK_EXTRA'); }
+
+  const sups = getSuppliers();
+  changed = false;
+  sups.forEach(s => { if (s.category === oldName) { s.category = newName; changed = true; } });
+  if (changed) saveSuppliers(sups); // saveSuppliers already auto-syncs
 }
 
 // §JS-DATA-USERS ════════════════════════════════════════════════
@@ -5510,6 +5588,9 @@ function renderSettings() {
   // Hide product catalog card for non-admins (already has overlay, but hide entire card)
   const prodCatalogCard = document.getElementById('products-catalog-card');
   if (prodCatalogCard) prodCatalogCard.style.display = isAdminOrSuper ? '' : 'none';
+  // Hide category manager for non-admins
+  const catCard = document.getElementById('settings-categories-card');
+  if (catCard) catCard.style.display = isAdminOrSuper ? '' : 'none';
   // Hide app settings for non-admins
   const appSettingsLabel = [...document.querySelectorAll('#page-settings .card-title')].find(el => el.textContent === 'Application Settings');
   if (appSettingsLabel) appSettingsLabel.closest('.card').style.display = isAdminOrSuper ? '' : 'none';
@@ -5521,7 +5602,9 @@ function renderSettings() {
     renderUserCards();
     renderProducts();
     renderSuppliersTable();
+    renderCategoriesManager();
   }
+  populateCategorySelects();
 
   const url = ls_get(LS.gsheet, '');
   if (url && document.getElementById('gsheet-url')) document.getElementById('gsheet-url').value = url;
@@ -5707,6 +5790,9 @@ async function autoSyncSheet(sheet) {
     const att = ls_get('bwood_hr_attendance', []);
     rows = [['id','username','fullname','date','arrival','departure','hours','status','notes','logged_by'],
       ...att.map(a=>[a.id||'',a.username||'',a.fullname||'',a.date||'',a.arrival||'',a.departure||'',a.hours||'',a.status||'',a.notes||'',a.logged_by||''])];
+  } else if (sheet === 'CATEGORIES') {
+    const cats = getCategories();
+    rows = [['name'], ...cats.map(c => [c])];
   }
   if (rows.length > 0) {
     gsheetCall({ action: 'overwrite', sheet, rows }).catch(() => {});
@@ -5832,7 +5918,7 @@ async function _silentPullAll() {
   };
 
   // Pull in parallel
-  const [rPurch, rCons, rPrix, rProj, rUsers, rSup, rMp, rWm, rWMP, rTT, rHRReq, rHRAtt] = await Promise.all([
+  const [rPurch, rCons, rPrix, rProj, rUsers, rSup, rMp, rWm, rWMP, rTT, rHRReq, rHRAtt, rCats] = await Promise.all([
     readSheet('PURCHASES'),
     readSheet('STOCK_EXTRA'),
     readSheet('PRIX'),
@@ -5844,7 +5930,8 @@ async function _silentPullAll() {
     readSheet('WORKERS_MP'),
     readSheet('TASK_TEMPLATES'),
     readSheet('HR_REQUESTS'),
-    readSheet('HR_ATTENDANCE')
+    readSheet('HR_ATTENDANCE'),
+    readSheet('CATEGORIES')
   ]);
 
   if (mapRows(rPurch)) {
@@ -5970,8 +6057,15 @@ async function _silentPullAll() {
     ls_set(LS_HR.attendance, att);
   }
 
+  if (mapRows(rCats)) {
+    const cats = mapRows(rCats).map(o => String(o.name || '').trim().toUpperCase()).filter(Boolean);
+    if (cats.length) ls_set(LS.categories, [...new Set(cats)]);
+  }
+
   if (badge) badge.innerHTML = '<div class="gsheet-dot"></div> Database Connected';
   _refreshSupplierDatalist();
+  populateCategorySelects();
+  renderCategoriesManager();
   // If on masterplan board, re-render the board (not just the project selector)
   if (currentPage === 'masterplan' && _mpCurrentProject) {
     mpRenderBoard();
@@ -6521,6 +6615,7 @@ function initApp() {
   const savedTheme = ls_get(LS.theme, 'light');
   applyTheme(savedTheme);
   applyCurrencyLabels();
+  populateCategorySelects();
 
   renderDashboard();
   _refreshSupplierDatalist(); // pre-populate supplier datalist
