@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
   ╔══════════════════════════════════════════════════════════════════╗
-  ║                  Creative Wood Work INVENTORY MANAGEMENT         ║
+  ║                  CREATIVE WOOD WORK INVENTORY MANAGEMENT         ║
   ║                     Single-File App v7                           ║
   ╠══════════════════════════════════════════════════════════════════╣
   ║  FILE STRUCTURE (Ctrl+F the section names to jump)               ║
@@ -27,7 +27,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Creative Wood Work — Inventory Management 2026 v1</title>
+<title>CREATIVE WOOD WORK — Inventory Management 2026 v7</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 /* ============================
@@ -1000,7 +1000,7 @@ input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--accent);
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73L13 2.27a2 2 0 0 0-2 0L4 6.27A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73L11 21.73a2 2 0 0 0 2 0l7-4a2 2 0 0 0 1-1.73z"/></svg>
       </div>
       <div>
-        <div class="brand">Creative Wood Work</div>
+        <div class="brand">CREATIVE WOOD WORK</div>
         <div class="sub">Inventory · 2026</div>
       </div>
     </div>
@@ -1030,7 +1030,7 @@ input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--accent);
   <!-- SIDEBAR -->
   <div class="sidebar">
     <div class="sidebar-logo">
-      <div class="brand">Creative Wood Work</div>
+      <div class="brand">CREATIVE WOOD WORK</div>
       <div class="year">INVENTORY · 2026</div>
     </div>
     <nav class="sidebar-nav">
@@ -3379,31 +3379,40 @@ const PRICES_DATA = []; // Loaded from Google Sheets
 
 // LocalStorage keys
 const LS = {
-  users: 'Creative Wood Work_users',
-  purchases: 'Creative Wood Work_purchases',
-  consumption: 'Creative Wood Work_consumption_extra',
-  settings: 'Creative Wood Work_settings',
-  gsheet: 'Creative Wood Work_gsheet_url',
-  theme: 'Creative Wood Work_theme',
-  projects: 'Creative Wood Work_projects',
-  custom_products: 'Creative Wood Work_custom_products',
-  suppliers: 'Creative Wood Work_suppliers',
-  masterplan: 'Creative Wood Work_masterplan',
-  workmen: 'Creative Wood Work_workmen',
-  wmp: 'Creative Wood Work_workers_plan',
-  task_templates: 'Creative Wood Work_task_templates'
+  users: 'bwood_users',
+  purchases: 'bwood_purchases',
+  consumption: 'bwood_consumption_extra',
+  settings: 'bwood_settings',
+  gsheet: 'bwood_gsheet_url',
+  theme: 'bwood_theme',
+  projects: 'bwood_projects',
+  custom_products: 'bwood_custom_products',
+  suppliers: 'bwood_suppliers',
+  masterplan: 'bwood_masterplan',
+  workmen: 'bwood_workmen',
+  wmp: 'bwood_workers_plan',
+  task_templates: 'bwood_task_templates'
 };
 
-// ── Hardcoded Google Sheets URL — works on any device automatically ──
+// ── Default Google Sheets URL — works on any device automatically ──
+// This is the Creative Wood Work Apps Script Web App URL. If you ever move to a new
+// Google Sheet, update this constant here (search for GSHEET_URL) —
+// this is the single source of truth that ships with the file.
 const GSHEET_URL = 'https://script.google.com/macros/s/AKfycby55yzgdu3K8FfxZTgA77gNQtY3TN0aeFIXiObB9WwIaCJ-UNqeN4hOIc8dAr3lt3or/exec';
 
 function ls_get(k, def) {
-  if (k === LS.gsheet) return GSHEET_URL; // always use hardcoded URL
+  if (k === LS.gsheet) {
+    try {
+      const v = localStorage.getItem(k);
+      // Use a locally-saved override if one exists, otherwise fall back
+      // to the URL hardcoded above.
+      return v ? JSON.parse(v) : GSHEET_URL;
+    } catch { return GSHEET_URL; }
+  }
   try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : def; }
   catch { return def; }
 }
 function ls_set(k, v) {
-  if (k === LS.gsheet) return; // ignore attempts to overwrite the hardcoded URL
   localStorage.setItem(k, JSON.stringify(v));
 }
 
@@ -4933,7 +4942,7 @@ function generateReportPreview() {
 
   const reportHeader = `
     <div style="text-align:center;margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid var(--border);">
-      <div style="font-size:24px;font-weight:800;color:var(--accent);">Creative Wood Work INVENTORY</div>
+      <div style="font-size:24px;font-weight:800;color:var(--accent);">CREATIVE WOOD WORK INVENTORY</div>
       <div style="font-size:14px;color:var(--text2);margin-top:4px;">${document.getElementById('report-preview-title').textContent}</div>
       <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);margin-top:4px;">Generated: ${now} · Filter: ${filterDesc}</div>
     </div>`;
@@ -5622,11 +5631,11 @@ async function autoSyncSheet(sheet) {
       [t.id||'', t.item_code||'', t.sub_type||'', t.project||'', (t.tasks||[]).join(' | ')]
     )];
   } else if (sheet === 'HR_REQUESTS') {
-    const reqs = ls_get('Creative Wood Work_hr_requests', []);
+    const reqs = ls_get('bwood_hr_requests', []);
     rows = [['id','username','fullname','type','date','days','amount','reason','status','reviewed_by','review_note','created_at'],
       ...reqs.map(r=>[r.id||'',r.username||'',r.fullname||'',r.type||'',r.date||'',r.days||'',r.amount||'',r.reason||'',r.status||'',r.reviewed_by||'',r.review_note||'',r.created_at||''])];
   } else if (sheet === 'HR_ATTENDANCE') {
-    const att = ls_get('Creative Wood Work_hr_attendance', []);
+    const att = ls_get('bwood_hr_attendance', []);
     rows = [['id','username','fullname','date','arrival','departure','hours','status','notes','logged_by'],
       ...att.map(a=>[a.id||'',a.username||'',a.fullname||'',a.date||'',a.arrival||'',a.departure||'',a.hours||'',a.status||'',a.notes||'',a.logged_by||''])];
   }
@@ -8219,8 +8228,8 @@ function wmpDeleteEntry(id) {
 
 // ── LocalStorage keys ──
 const LS_HR = {
-  requests:   'Creative Wood Work_hr_requests',
-  attendance: 'Creative Wood Work_hr_attendance'
+  requests:   'bwood_hr_requests',
+  attendance: 'bwood_hr_attendance'
 };
 
 function getHRRequests()        { return ls_get(LS_HR.requests, []); }
