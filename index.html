@@ -1180,7 +1180,7 @@ input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--accent);
       <div class="grid2">
         <div class="card">
           <div class="card-header">
-            <div class="card-title">Monthly Consumption (CFA)</div>
+            <div class="card-title">Monthly Consumption (USD)</div>
           </div>
           <div id="monthly-chart"></div>
         </div>
@@ -1324,7 +1324,7 @@ input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--accent);
                 <th>CODE</th>
                 <th>CATEGORY</th>
                 <th>TYPE</th>
-                <th class="text-right">UNIT PRICE (CFA)</th>
+                <th class="text-right">UNIT PRICE (USD)</th>
                 <th class="text-right">PURCHASES</th>
                 <th class="text-right">CONSUMED</th>
                 <th class="text-right">STOCK QTY</th>
@@ -1904,11 +1904,11 @@ input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--accent);
             <input type="number" id="mp-qty" placeholder="1" min="1" style="width:100%;" oninput="mpCalcTotal()">
           </div>
           <div>
-            <label class="form-label">Unit Price (CFA)</label>
+            <label class="form-label">Unit Price (USD)</label>
             <input type="number" id="mp-unit-price" placeholder="0" min="0" style="width:100%;" oninput="mpCalcTotal()">
           </div>
           <div>
-            <label class="form-label">Total (CFA)</label>
+            <label class="form-label">Total (USD)</label>
             <input type="text" id="mp-total-display" readonly style="width:100%;background:var(--bg3);">
           </div>
         </div>
@@ -2307,8 +2307,8 @@ input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--accent);
                 <th>NAME</th>
                 <th>JOB</th>
                 <th>PHONE</th>
-                <th class="text-right">MONTHLY SALARY (CFA)</th>
-                <th class="text-right">DAILY WAGE (CFA)</th>
+                <th class="text-right">MONTHLY SALARY (USD)</th>
+                <th class="text-right">DAILY WAGE (USD)</th>
                 <th>CITIZENSHIP</th>
                 <th class="no-print">ACTIONS</th>
               </tr>
@@ -2339,11 +2339,11 @@ input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--accent);
             <datalist id="wm-job-datalist"></datalist>
           </div>
           <div>
-            <label class="form-label">Monthly Salary (CFA)</label>
+            <label class="form-label">Monthly Salary (USD)</label>
             <input type="number" id="wm-salary" placeholder="0" min="0" style="width:100%;" oninput="wmAutoCalcWage()">
           </div>
           <div>
-            <label class="form-label">Daily Wage (CFA)</label>
+            <label class="form-label">Daily Wage (USD)</label>
             <input type="number" id="wm-daily" placeholder="0" min="0" style="width:100%;" oninput="wmAutoCalcSalary()">
           </div>
           <div>
@@ -2632,7 +2632,7 @@ function handleRequest(e) {
             <thead>
               <tr>
                 <th>CODE</th><th>CATEGORY</th><th>TYPE</th>
-                <th class="text-right">PRICE (CFA)</th>
+                <th class="text-right">PRICE (USD)</th>
                 <th class="no-print">ACTIONS</th>
               </tr>
             </thead>
@@ -2696,7 +2696,7 @@ function handleRequest(e) {
               <option>K-PLINTH</option>
               <option>K-LEGS</option>
             </select>
-            <input type="number" id="np-price" placeholder="Price CFA" style="flex:1;" min="0">
+            <input type="number" id="np-price" placeholder="Price USD" style="flex:1;" min="0">
             <button class="btn btn-accent" onclick="addProduct()">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
               Add
@@ -2718,7 +2718,7 @@ function handleRequest(e) {
           <div>
             <label class="form-label">Currency</label>
             <select id="set-currency" style="width:100%;">
-              <option>CFA</option><option>USD</option><option>EUR</option>
+              <option>USD</option><option>USD</option><option>EUR</option>
             </select>
           </div>
           <div>
@@ -2961,7 +2961,7 @@ function handleRequest(e) {
         <input type="number" id="hr-req-days" placeholder="e.g. 2" min="0.5" step="0.5" style="width:100%;">
       </div>
       <div id="hr-req-amount-wrap">
-        <label class="form-label">Amount Requested (CFA)</label>
+        <label class="form-label">Amount Requested (USD)</label>
         <input type="number" id="hr-req-amount" placeholder="e.g. 150000" min="0" style="width:100%;">
       </div>
       <div class="full-col">
@@ -3074,11 +3074,11 @@ function handleRequest(e) {
         <input type="number" id="pm-qty" min="1" value="1" style="width:100%;" oninput="calcPurchaseTotal();calcPurchaseRemaining();">
       </div>
       <div>
-        <label class="form-label">Unit Price (CFA)</label>
+        <label class="form-label">Unit Price (USD)</label>
         <input type="number" id="pm-price" value="0" style="width:100%;" oninput="calcPurchaseTotal()">
       </div>
       <div>
-        <label class="form-label">Total (CFA)</label>
+        <label class="form-label">Total (USD)</label>
         <input type="text" id="pm-total" readonly style="width:100%;background:var(--bg3);">
       </div>
       <div class="full-col">
@@ -3158,11 +3158,11 @@ function handleRequest(e) {
         <input type="number" id="cm-qty" min="1" value="1" style="width:100%;" oninput="calcConsTotal();checkConsStock()">
       </div>
       <div>
-        <label class="form-label">Unit Price (CFA)</label>
+        <label class="form-label">Unit Price (USD)</label>
         <input type="number" id="cm-price" value="0" style="width:100%;" oninput="calcConsTotal()">
       </div>
       <div>
-        <label class="form-label">Total (CFA)</label>
+        <label class="form-label">Total (USD)</label>
         <input type="text" id="cm-total" readonly style="width:100%;background:var(--bg3);">
       </div>
       <div class="full-col" style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg2);border-radius:var(--radius);font-family:'DM Mono',monospace;font-size:12px;">
@@ -3235,7 +3235,7 @@ function handleRequest(e) {
       <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);letter-spacing:1px;margin-bottom:12px;">HR SETTINGS (ADMIN ONLY)</div>
       <div class="modal-grid">
         <div>
-          <label class="form-label">Monthly Salary (CFA)</label>
+          <label class="form-label">Monthly Salary (USD)</label>
           <input type="number" id="um-salary" placeholder="e.g. 500000" min="0" style="width:100%;">
         </div>
         <div>
@@ -3904,7 +3904,7 @@ function renderDashboard() {
       </div>
       <div class="stat-label">Total Consumption</div>
       <div class="stat-value">${fmt(total)}</div>
-      <div class="stat-change"><span class="stat-neg">CFA</span></div>
+      <div class="stat-change"><span class="stat-neg">USD</span></div>
     </div>
     <div class="stat-card">
       <div class="stat-icon" style="background:var(--green-bg);">
@@ -3912,7 +3912,7 @@ function renderDashboard() {
       </div>
       <div class="stat-label">Total Purchases</div>
       <div class="stat-value">${fmt(purchTotal)}</div>
-      <div class="stat-change"><span class="stat-pos">CFA · ${purchases.length} orders</span></div>
+      <div class="stat-change"><span class="stat-pos">USD · ${purchases.length} orders</span></div>
     </div>
     <div class="stat-card">
       <div class="stat-icon" style="background:var(--blue-bg);">
@@ -4094,17 +4094,17 @@ function renderPurchases() {
     <div class="stat-card">
       <div class="stat-label">Total Orders</div>
       <div class="stat-value">${purchases.length}</div>
-      <div class="stat-change"><span style="color:var(--text3);">${fmt(total)} CFA</span></div>
+      <div class="stat-change"><span style="color:var(--text3);">${fmt(total)} USD</span></div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Received</div>
       <div class="stat-value">${fmt(received)}</div>
-      <div class="stat-change"><span class="stat-pos">CFA · In stock</span></div>
+      <div class="stat-change"><span class="stat-pos">USD · In stock</span></div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Pending</div>
       <div class="stat-value">${fmt(pending)}</div>
-      <div class="stat-change"><span class="stat-neg">CFA · Awaiting</span></div>
+      <div class="stat-change"><span class="stat-neg">USD · Awaiting</span></div>
     </div>
   `;
 }
@@ -4404,7 +4404,7 @@ function fillPriceFromCode() { onPurchaseTypeChange(); }
 function calcPurchaseTotal() {
   const qty = Number(document.getElementById('pm-qty').value) || 0;
   const price = Number(document.getElementById('pm-price').value) || 0;
-  document.getElementById('pm-total').value = fmt(qty * price) + ' CFA';
+  document.getElementById('pm-total').value = fmt(qty * price) + ' USD';
 }
 
 function onPurchaseStatusChange() {
@@ -4521,7 +4521,7 @@ function fillConsPrice() {
 function calcConsTotal() {
   const qty = Number(document.getElementById('cm-qty').value) || 0;
   const price = Number(document.getElementById('cm-price').value) || 0;
-  document.getElementById('cm-total').value = fmt(qty * price) + ' CFA';
+  document.getElementById('cm-total').value = fmt(qty * price) + ' USD';
 }
 
 function checkConsStock() {
@@ -4984,7 +4984,7 @@ function generateReportPreview() {
     const total = data.reduce((s,d)=>s+(d.total||0),0);
     html = reportHeader + `
       <div style="margin-bottom:12px;font-family:'DM Mono',monospace;font-size:12px;">
-        <span>${data.length} records · Total: <strong>${fmt(total)} CFA</strong></span>
+        <span>${data.length} records · Total: <strong>${fmt(total)} USD</strong></span>
       </div>
       <table>
         <thead><tr><th>DATE</th><th>PROJECT</th><th>CODE</th><th>CATEGORY</th><th>TYPE</th><th class="text-right">QTY</th><th class="text-right">UNIT PRICE</th><th class="text-right">TOTAL</th></tr></thead>
@@ -5004,7 +5004,7 @@ function generateReportPreview() {
     const totalValue = stock.reduce((s,i)=>s+(i.stock*i.unit_price),0);
     html = reportHeader + `
       <div style="margin-bottom:12px;font-family:'DM Mono',monospace;font-size:12px;">
-        <span>${stock.length} items · Total Stock Value: <strong>${fmt(totalValue)} CFA</strong></span>
+        <span>${stock.length} items · Total Stock Value: <strong>${fmt(totalValue)} USD</strong></span>
       </div>
       <table>
         <thead><tr><th>CODE</th><th>CATEGORY</th><th>TYPE</th><th class="text-right">UNIT PRICE</th><th class="text-right">PURCHASES</th><th class="text-right">CONSUMED</th><th class="text-right">STOCK</th><th class="text-right">VALUE</th><th>STATUS</th></tr></thead>
@@ -5029,7 +5029,7 @@ function generateReportPreview() {
     const total = purchases.reduce((s,p)=>s+(p.total||0),0);
     html = reportHeader + `
       <div style="margin-bottom:12px;font-family:'DM Mono',monospace;font-size:12px;">
-        <span>${purchases.length} orders · Total: <strong>${fmt(total)} CFA</strong></span>
+        <span>${purchases.length} orders · Total: <strong>${fmt(total)} USD</strong></span>
       </div>
       <table>
         <thead><tr><th>DATE</th><th>CODE</th><th>CATEGORY</th><th>TYPE</th><th>SUPPLIER</th><th class="text-right">QTY</th><th class="text-right">UNIT PRICE</th><th class="text-right">TOTAL</th><th>STATUS</th></tr></thead>
@@ -5103,10 +5103,10 @@ function generateReportPreview() {
               <th class="text-right">QTY TOTAL</th>
               <th class="text-right">QTY DONE</th>
               <th class="text-right">QTY REMAINING</th>
-              <th class="text-right">UNIT VALUE (CFA)</th>
-              <th class="text-right">TOTAL VALUE (CFA)</th>
-              <th class="text-right">DONE VALUE (CFA)</th>
-              <th class="text-right">REM. VALUE (CFA)</th>
+              <th class="text-right">UNIT VALUE (USD)</th>
+              <th class="text-right">TOTAL VALUE (USD)</th>
+              <th class="text-right">DONE VALUE (USD)</th>
+              <th class="text-right">REM. VALUE (USD)</th>
             </tr></thead>
             <tbody>${stageRows.map(stage => {
               const rows = stage.rows;
@@ -5186,7 +5186,7 @@ function generateReportPreview() {
           ? `<p style="color:var(--text3);font-size:12px;">No consumption records${month||cat||code||type?' matching filters':''} for this project.</p>`
           : `<table style="margin-bottom:0;">
             <thead><tr><th>DATE</th><th>CODE</th><th>CATEGORY</th><th>TYPE</th>
-              <th class="text-right">QTY</th><th class="text-right">UNIT PRICE</th><th class="text-right">TOTAL (CFA)</th></tr></thead>
+              <th class="text-right">QTY</th><th class="text-right">UNIT PRICE</th><th class="text-right">TOTAL (USD)</th></tr></thead>
             <tbody>${cons.sort((a,b)=>(a.date||'').localeCompare(b.date||'')).map(d=>`
               <tr>
                 <td class="mono-cell">${fmtDate(d.date)}</td>
@@ -5200,7 +5200,7 @@ function generateReportPreview() {
             </tbody>
             <tfoot><tr style="background:var(--bg3);">
               <td colspan="6" class="fw7">TOTAL MATERIALS COST</td>
-              <td class="text-right mono-cell fw7" style="color:var(--accent);">${fmt(consTotal)} CFA</td>
+              <td class="text-right mono-cell fw7" style="color:var(--accent);">${fmt(consTotal)} USD</td>
             </tr></tfoot>
           </table>`;
 
@@ -5215,7 +5215,7 @@ function generateReportPreview() {
                   </div>
                 </div>
                 <div style="text-align:right;">
-                  <div style="font-size:22px;font-weight:800;font-family:'DM Mono',monospace;color:var(--accent);">${fmt(consTotal)} CFA</div>
+                  <div style="font-size:22px;font-weight:800;font-family:'DM Mono',monospace;color:var(--accent);">${fmt(consTotal)} USD</div>
                   <div style="font-size:11px;color:var(--text3);">Total Materials Cost</div>
                 </div>
               </div>
@@ -5240,7 +5240,7 @@ function generateReportPreview() {
 
       html = reportHeader + sections + (targetProjects.length > 1 ? `
         <div style="border-top:2px solid var(--accent);padding-top:16px;text-align:right;margin-top:8px;">
-          <span style="font-size:14px;font-weight:800;font-family:'DM Mono',monospace;">GRAND TOTAL ALL PROJECTS: ${fmt(grandTotal)} CFA</span>
+          <span style="font-size:14px;font-weight:800;font-family:'DM Mono',monospace;">GRAND TOTAL ALL PROJECTS: ${fmt(grandTotal)} USD</span>
         </div>` : '');
     }
   }
@@ -5258,9 +5258,9 @@ function generateReportPreview() {
       const catTotal = Object.values(types).reduce((s,v)=>s+v.total,0);
       return `
         <div style="margin-bottom:20px;">
-          <div style="font-weight:700;color:var(--accent);margin-bottom:8px;font-size:14px;">${c} — ${fmt(catTotal)} CFA</div>
+          <div style="font-weight:700;color:var(--accent);margin-bottom:8px;font-size:14px;">${c} — ${fmt(catTotal)} USD</div>
           <table>
-            <thead><tr><th>TYPE</th><th class="text-right">TOTAL QTY</th><th class="text-right">TOTAL (CFA)</th></tr></thead>
+            <thead><tr><th>TYPE</th><th class="text-right">TOTAL QTY</th><th class="text-right">TOTAL (USD)</th></tr></thead>
             <tbody>${Object.entries(types).map(([t,v])=>`
               <tr><td class="mono-cell">${t}</td>
               <td class="text-right mono-cell">${fmt(v.qty)}</td>
@@ -5268,7 +5268,7 @@ function generateReportPreview() {
             </tbody>
           </table>
         </div>`;
-    }).join('') + `<div style="text-align:right;font-weight:700;font-size:14px;margin-top:12px;">GRAND TOTAL: ${fmt(grandTotal)} CFA</div>`;
+    }).join('') + `<div style="text-align:right;font-weight:700;font-size:14px;margin-top:12px;">GRAND TOTAL: ${fmt(grandTotal)} USD</div>`;
   }
 
   else if (currentReportType === 'supplier-report') {
@@ -5328,7 +5328,7 @@ function generateReportPreview() {
           <div style="font-size:28px;font-weight:800;color:var(--text);">${filteredPurch.length}</div>
         </div>
         <div style="background:var(--bg2);border-radius:var(--radius);padding:16px;text-align:center;">
-          <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--text3);letter-spacing:2px;margin-bottom:6px;">TOTAL VALUE (CFA)</div>
+          <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--text3);letter-spacing:2px;margin-bottom:6px;">TOTAL VALUE (USD)</div>
           <div style="font-size:28px;font-weight:800;color:var(--accent);">${fmt(filteredTotal)}</div>
         </div>
       </div>
@@ -5342,7 +5342,7 @@ function generateReportPreview() {
             <th>PHONE</th>
             <th class="text-right">ORDERS</th>
             <th class="text-right">TOTAL QTY</th>
-            <th class="text-right">TOTAL VALUE (CFA)</th>
+            <th class="text-right">TOTAL VALUE (USD)</th>
             <th class="text-right">% SHARE</th>
             <th>LAST ORDER</th>
             <th>CATEGORIES</th>
@@ -5797,7 +5797,7 @@ async function _silentPullAll() {
   if (mapRows(rPrix)) {
     const prods = mapRows(rPrix).map(o => ({
       code: o.code||o['ITEM CODE']||'', category: o.category||o['DESCRIPTION']||'',
-      type: o.type||o['TYPE']||'', price: Number(o.price||o['PRICE IN CFA'])||0
+      type: o.type||o['TYPE']||'', price: Number(o.price||o['PRICE IN USD'])||0
     })).filter(p => p.code && p.price);
     ls_set(LS.custom_products, prods);
   }
@@ -6206,7 +6206,7 @@ function renderProjectsPage() {
       <div>
         <div class="list-manage-name">${p.name}</div>
         <div class="list-manage-meta">
-          ${p.client ? `<strong>Client:</strong> ${p.client} · ` : ''}${p.location ? `<strong>Location:</strong> ${p.location} · ` : ''}${p.phone ? `<strong>Phone:</strong> ${p.phone} · ` : ''}${p.project_manager ? `<strong>PM:</strong> ${displayName(p.project_manager)} · ` : ''}${p.supervisor ? `<strong>Supervisor:</strong> ${displayName(p.supervisor)} · ` : ''}${p.assignees && p.assignees.length ? `<strong>Architect(s):</strong> ${p.assignees.map(displayName).join(', ')} · ` : ''}Consumption: <strong>${fmt(consByProj[p.name]||0)} CFA</strong>${p.created ? ` · Created: ${p.created}` : ''}
+          ${p.client ? `<strong>Client:</strong> ${p.client} · ` : ''}${p.location ? `<strong>Location:</strong> ${p.location} · ` : ''}${p.phone ? `<strong>Phone:</strong> ${p.phone} · ` : ''}${p.project_manager ? `<strong>PM:</strong> ${displayName(p.project_manager)} · ` : ''}${p.supervisor ? `<strong>Supervisor:</strong> ${displayName(p.supervisor)} · ` : ''}${p.assignees && p.assignees.length ? `<strong>Architect(s):</strong> ${p.assignees.map(displayName).join(', ')} · ` : ''}Consumption: <strong>${fmt(consByProj[p.name]||0)} USD</strong>${p.created ? ` · Created: ${p.created}` : ''}
         </div>
       </div>
       <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
@@ -6416,7 +6416,7 @@ function addProduct() {
   document.getElementById('np-cat').value = '';
   document.getElementById('np-type').value = '';
   renderProducts();
-  showToast('success', 'Product Added', `${code} (${cat}) added at ${fmt(price)} CFA.`);
+  showToast('success', 'Product Added', `${code} (${cat}) added at ${fmt(price)} USD.`);
 }
 
 function deleteProduct(code, cat, type) {
@@ -6764,7 +6764,7 @@ function mpOpenSummaryModal() {
       ${statCard('IN PROGRESS', inProgressItems, 'var(--gold)')}
       ${statCard('NOT STARTED', notStartedItems, 'var(--text3)')}
       ${statCard('TASKS DONE', doneTasks+' / '+totalTasks)}
-      ${grandTotal ? statCard('TOTAL VALUE', fmt(grandTotal)+' CFA') : ''}
+      ${grandTotal ? statCard('TOTAL VALUE', fmt(grandTotal)+' USD') : ''}
     </div>
 
     <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;color:var(--text3);margin-bottom:8px;">WHAT'S DONE — STAGE BY STAGE</div>
@@ -6860,7 +6860,7 @@ function mpRenderBoard() {
   const grandTotal = allItems.reduce((s,i) => s + (Number(i.total)||0), 0);
   const fullyDone  = allItems.filter(i => { const p = mpItemProgress(i); return p.total > 0 && p.done === p.total; }).length;
   document.getElementById('mp-board-sub').textContent =
-    `${allItems.length} items · ${fullyDone} complete · ${doneTask}/${totalTask} tasks done${grandTotal ? ' · Total: ' + fmt(grandTotal) + ' CFA' : ''}`;
+    `${allItems.length} items · ${fullyDone} complete · ${doneTask}/${totalTask} tasks done${grandTotal ? ' · Total: ' + fmt(grandTotal) + ' USD' : ''}`;
 
   // Stage pills — collect all unique task names across project items
   const allTaskNames = [...new Set(allItems.flatMap(i => mpParseTasks(i.tasks).map(t=>t.name)))];
@@ -7265,7 +7265,7 @@ function mpDeleteItem(id) {
 function mpCalcTotal() {
   const qty   = parseFloat(document.getElementById('mp-qty').value) || 0;
   const price = parseFloat(document.getElementById('mp-unit-price').value) || 0;
-  document.getElementById('mp-total-display').value = qty && price ? fmt(qty * price) + ' CFA' : '';
+  document.getElementById('mp-total-display').value = qty && price ? fmt(qty * price) + ' USD' : '';
 }
 
 // ── BOQ Batch Entry ──
@@ -7334,7 +7334,7 @@ function boqUpdatePreview() {
     const grand = price;
     document.getElementById('boq-total-line').style.display = 'block';
     document.getElementById('boq-total-line').textContent =
-      `${subtypes.length} sub-type${subtypes.length>1?'s':''} × ${qty} rows each = ${totalRows} total rows · Item Total: ${fmt(grand)} CFA`;
+      `${subtypes.length} sub-type${subtypes.length>1?'s':''} × ${qty} rows each = ${totalRows} total rows · Item Total: ${fmt(grand)} USD`;
   } else if (qty) {
     document.getElementById('boq-total-line').style.display = 'block';
     document.getElementById('boq-total-line').textContent =
@@ -7543,14 +7543,14 @@ function renderWorkmen() {
         <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
       </div>
       <div class="stat-label">Total Monthly Salaries</div>
-      <div class="stat-value" style="font-size:18px;">${fmt(totalSalary)} <span style="font-size:12px;color:var(--text3);">CFA</span></div>
+      <div class="stat-value" style="font-size:18px;">${fmt(totalSalary)} <span style="font-size:12px;color:var(--text3);">USD</span></div>
     </div>
     <div class="stat-card">
       <div class="stat-icon" style="background:var(--gold-bg);">
         <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
       </div>
       <div class="stat-label">Total Daily Wages</div>
-      <div class="stat-value" style="font-size:18px;">${fmt(totalDaily)} <span style="font-size:12px;color:var(--text3);">CFA</span></div>
+      <div class="stat-value" style="font-size:18px;">${fmt(totalDaily)} <span style="font-size:12px;color:var(--text3);">USD</span></div>
     </div>`;
 
   // Table
@@ -7569,8 +7569,8 @@ function renderWorkmen() {
         <td class="mono-cell" style="white-space:nowrap;">
           ${w.phone ? `<a href="tel:${w.phone}" style="color:var(--accent);text-decoration:none;" title="Call">${w.phone}</a>` : '-'}
         </td>
-        <td class="text-right mono-cell">${w.salary ? fmt(w.salary) + ' CFA' : '-'}</td>
-        <td class="text-right mono-cell">${w.daily_wage ? fmt(w.daily_wage) + ' CFA' : '-'}</td>
+        <td class="text-right mono-cell">${w.salary ? fmt(w.salary) + ' USD' : '-'}</td>
+        <td class="text-right mono-cell">${w.daily_wage ? fmt(w.daily_wage) + ' USD' : '-'}</td>
         <td class="mono-cell">${w.citizenship||'-'}</td>
         <td class="no-print" style="white-space:nowrap;display:flex;gap:5px;align-items:center;">
           ${w.phone ? `<button class="wa-btn" onclick="wmWhatsApp('${w.id}')" title="WhatsApp">
@@ -8317,7 +8317,7 @@ function renderHRDashboard() {
       <div>
         <div class="hr-balance-label">Monthly Salary</div>
         <div class="hr-balance-value" style="color:var(--green);">${salary ? fmt(salary) : '—'}</div>
-        <div class="hr-balance-sub">CFA ${u.work_start&&u.work_end ? '· Hours: '+cleanGSTime(u.work_start)+' – '+cleanGSTime(u.work_end) : ''}</div>
+        <div class="hr-balance-sub">USD ${u.work_start&&u.work_end ? '· Hours: '+cleanGSTime(u.work_start)+' – '+cleanGSTime(u.work_end) : ''}</div>
       </div>
     </div>
     <div class="hr-balance-card">
@@ -8435,7 +8435,7 @@ function _hrRequestCard(r, showActions) {
       </div>
       ${showActions||!isOwn ? `<div class="hr-req-meta">From: <strong>${r.fullname||r.username}</strong></div>` : ''}
       ${r.days ? `<div class="hr-req-meta">Days: <strong>${r.days}</strong></div>` : ''}
-      ${r.amount ? `<div class="hr-req-meta">Amount: <strong>${fmt(Number(r.amount))} CFA</strong></div>` : ''}
+      ${r.amount ? `<div class="hr-req-meta">Amount: <strong>${fmt(Number(r.amount))} USD</strong></div>` : ''}
       <div class="hr-req-meta" style="margin-top:4px;">${r.reason||''}</div>
       ${r.review_note ? `<div class="hr-req-note">💬 <strong>${r.reviewed_by||'Reviewer'}:</strong> ${r.review_note}</div>` : ''}
     </div>
@@ -8526,7 +8526,7 @@ function hrOpenReview(id) {
       <div style="font-weight:700;font-size:15px;">${meta.icon} ${r.fullname||r.username}</div>
       <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);">${r.type.toUpperCase()} · ${r.date}</div>
       ${r.days ? `<div style="font-size:13px;">Days: <strong>${r.days}</strong></div>` : ''}
-      ${r.amount ? `<div style="font-size:13px;">Amount: <strong>${fmt(Number(r.amount))} CFA</strong></div>` : ''}
+      ${r.amount ? `<div style="font-size:13px;">Amount: <strong>${fmt(Number(r.amount))} USD</strong></div>` : ''}
       <div style="font-size:13px;margin-top:4px;">"${r.reason}"</div>
     </div>`;
   document.getElementById('hr-review-note').value = '';
